@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
+    
+    ///If the user were to tap Launch from this alert, a special option would be sent into the application: didFinishLaunchingWithOptions method if your app wasn’t currently running
     
     //create it dispatch async main and put this inside it
     [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
@@ -110,6 +113,11 @@
 -(void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings{
     // Ali implemented to see what it is
     NSLog(@"APN device token: %@", notificationSettings);
+    
+    //register to receive notifications
+    [application registerForRemoteNotifications];
+    // NSLog(@"didRegisterUser");
+    
 }
 
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
@@ -118,6 +126,18 @@
 
 -(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
     NSLog(@"Push received: %@", userInfo);
+    ViewController *vc = (ViewController *)self.window.rootViewController;
+    vc.infoLabel.text = @"Push recieved";
+    /*
+    if ( application.applicationState == UIApplicationStateInactive || application.applicationState == UIApplicationStateBackground  )
+    {
+        //opened from a push notification when the app was on background
+        
+    }
+    else{
+        
+    }
+     */
 }
 
 -(void)application:(UIApplication *)application didUpdateUserActivity:(NSUserActivity *)userActivity{
