@@ -53,6 +53,7 @@
 		C20F074E1DDFBEE000973FED /* PushNotificationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PushNotificationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C20F07521DDFBEE000973FED /* PushNotificationUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushNotificationUITests.m; sourceTree = "<group>"; };
 		C20F07541DDFBEE000973FED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C20F07601DDFCBAB00973FED /* PushNotification.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PushNotification.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +104,7 @@
 		C20F07291DDFBEE000973FED /* PushNotification */ = {
 			isa = PBXGroup;
 			children = (
+				C20F07601DDFCBAB00973FED /* PushNotification.entitlements */,
 				C20F072D1DDFBEE000973FED /* AppDelegate.h */,
 				C20F072E1DDFBEE000973FED /* AppDelegate.m */,
 				C20F07301DDFBEE000973FED /* ViewController.h */,
@@ -212,6 +214,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = FYX37TYYH9;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					C20F07421DDFBEE000973FED = {
 						CreatedOnToolsVersion = 8.1;
@@ -377,7 +384,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -418,7 +425,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -429,8 +436,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PushNotification/PushNotification.entitlements;
 				DEVELOPMENT_TEAM = FYX37TYYH9;
 				INFOPLIST_FILE = PushNotification/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.AR-T.PushNotification";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -441,8 +450,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PushNotification/PushNotification.entitlements;
 				DEVELOPMENT_TEAM = FYX37TYYH9;
 				INFOPLIST_FILE = PushNotification/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.AR-T.PushNotification";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -518,6 +529,7 @@
 				C20F07591DDFBEE000973FED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C20F075A1DDFBEE000973FED /* Build configuration list for PBXNativeTarget "PushNotificationTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +538,7 @@
 				C20F075C1DDFBEE000973FED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C20F075D1DDFBEE000973FED /* Build configuration list for PBXNativeTarget "PushNotificationUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +547,7 @@
 				C20F075F1DDFBEE000973FED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
