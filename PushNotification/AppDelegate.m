@@ -106,4 +106,24 @@
     }
 }
 
+#pragma mark -  Push Notification
+-(void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings{
+    // Ali implemented to see what it is
+    NSLog(@"APN device token: %@", notificationSettings);
+}
+
+-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+    NSLog(@"APN device token: %@", deviceToken);
+}
+
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+    NSLog(@"Push received: %@", userInfo);
+}
+
+-(void)application:(UIApplication *)application didUpdateUserActivity:(NSUserActivity *)userActivity{
+    //Ali implemented to see what it is
+    NSLog(@"Push received: %@", userActivity);
+
+}
+
 @end
